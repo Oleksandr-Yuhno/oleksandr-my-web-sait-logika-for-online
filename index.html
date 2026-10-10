@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>// NEXUS_CHEATS — Магазин ігрових чітів</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="#home" class="logo">
+        [NEXUS_CHEATS]<span class="blink">_</span>
+      </a>
+
+      <nav class="desktop">
+        <a href="#home">ГОЛОВНА</a>
+        <a href="#shop">МАГАЗИН ЧІТІВ</a>
+        <a href="#wheel">КОЛЕСО ФОРТУНИ</a>
+        <a href="#donate">ПІДТРИМАТИ ПРОЄКТ</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="balance-badge" title="Ваш баланс монет">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm1-13h-2v6l5 3 1-1.7-4-2.3z"/>
+          </svg>
+          <span id="balanceValue">0</span>
+        </div>
+
+        <button class="cart-btn" id="openCartBtn" type="button">
+          КОШИК
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="burger" id="burgerBtn" type="button" aria-label="Відкрити меню">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Головна</a>
+      <a href="#shop">Магазин чітів</a>
+      <a href="#wheel">Колесо фортуни</a>
+      <a href="#donate">Підтримати проєкт</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <h1>SYSTEM BREACHED_</h1>
+      <div class="typed-line" id="typedLine"></div>
+
+      <div class="hero-btns">
+        <a href="#shop" class="btn btn-green">[ УВІЙТИ ДО МАГАЗИНУ ]</a>
+        <a href="#wheel" class="btn btn-ghost">[ ЗАРОБИТИ МОНЕТИ ]</a>
+      </div>
+
+      <div class="scroll-hint">▼ scroll ▼</div>
+    </div>
+
+    <section id="shop">
+      <h2 class="section-title">Магазин чітів</h2>
+      <p class="section-sub">// оберіть свою зброю. оплата — лише ігровими монетами</p>
+      <div class="products" id="productsGrid"></div>
+    </section>
+
+    <section id="wheel">
+      <h2 class="section-title">Колесо фортуни</h2>
+      <p class="section-sub">// крутіть і заробляйте монети. 1 спін = 10 секунд очікування</p>
+
+      <div class="wheel-wrap">
+        <div class="wheel-container">
+          <div class="wheel-pointer"></div>
+          <canvas id="wheelCanvas" width="640" height="640"></canvas>
+          <div class="wheel-hub">✦</div>
+        </div>
+
+        <div id="wheelResult"></div>
+        <button class="btn btn-green" id="spinBtn" type="button">[ КРУТИТИ ]</button>
+        <div class="cooldown" id="cooldownText"></div>
+      </div>
+    </section>
+
+    <section id="donate">
+      <h2 class="section-title">Підтримати проєкт</h2>
+      <p class="section-sub">// допоможіть серверу вижити (або ні)</p>
+
+      <div class="donate-panel">
+        <h3>⚠ ДОНАТ-ТЕРМІНАЛ ⚠</h3>
+        <p>
+          Сервери NEXUS працюють на енергії та пікселях.<br>
+          Ваш донат — це лише жест підтримки.<br>
+          Реальні кошти НЕ списуються. Це демонстраційна кнопка.
+        </p>
+        <button class="btn btn-red" id="donateBtn" type="button">[ ЗАДОНАТИТИ ]</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 NEXUS_CHEATS // all rights encrypted</div>
+    <div class="warn">⚠ Демонстраційний проєкт. Чіти вигадані, платежі фіктивні, монети — лише в межах сайту.</div>
+  </footer>
+
+  <div class="modal-overlay" id="cartOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>&gt; КОШИК_</h2>
+        <button class="modal-close" id="closeCartBtn" type="button" aria-label="Закрити кошик">✕</button>
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>ЗАГАЛЬНА СУМА:</span>
+          <span id="cartTotal">0 🪙</span>
+        </div>
+        <button class="btn btn-green" id="checkoutBtn" type="button">[ ОФОРМИТИ ЗАМОВЛЕННЯ ]</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toasts"></div>
+  <script src="script.js"></script>
+</body>
+</html>
